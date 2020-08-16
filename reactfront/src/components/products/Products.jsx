@@ -35,6 +35,7 @@ const Products = (props) => {
     productService
       .getProducts(page, perPage, category, subCategory)
       .then((data) => {
+        console.log(data);
         setProducts(data.products);
 
         setTotal(data.total);
@@ -50,37 +51,49 @@ const Products = (props) => {
   return (
     <div>
       {category == "Savory" ? (
-        <ListGroup horizontal>
+        <ListGroup vertical>
           <a href={"/products/" + page + "/" + category + "/Salads"}>
-            <ListGroup.Item>Salads</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>Salads</ListGroup.Item>
           </a>
           <a href={"/products/" + page + "/" + category + "/BreadCorner"}>
-            <ListGroup.Item>Bread Corner</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>
+              Bread Corner
+            </ListGroup.Item>
           </a>
 
           <a href={"/products/" + page + "/" + category + "/Sandwiches"}>
-            <ListGroup.Item>Sandwiches</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>
+              Sandwiches
+            </ListGroup.Item>
           </a>
           <a href={"/products/" + page + "/" + category + "/Chaats"}>
-            <ListGroup.Item>Chaats</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>Chaats</ListGroup.Item>
           </a>
         </ListGroup>
       ) : (
-        <ListGroup horizontal>
+        <ListGroup Vertical>
           <a href={"/products/" + page + "/" + category + "/Desserts"}>
-            <ListGroup.Item>Desserts</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>
+              Desserts
+            </ListGroup.Item>
           </a>
           <a href={"/products/" + page + "/" + category + "/BreadCorner"}>
-            <ListGroup.Item>Bread Corner</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>
+              Bread Corner
+            </ListGroup.Item>
           </a>
           <a href={"/products/" + page + "/" + category + "/ClassicTeaCakes"}>
-            <ListGroup.Item>Classic Tea Cakes</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>
+              Classic Tea Cakes
+            </ListGroup.Item>
           </a>
           <a href={"/products/" + page + "/" + category + "/CheeseCakes"}>
-            <ListGroup.Item>Cheese Cakes</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>
+              Cheese Cakes
+            </ListGroup.Item>
           </a>
           <a href={"/products/" + page + "/" + category + "/Chaats"}>
-            <ListGroup.Item>Chaats</ListGroup.Item>
+            <ListGroup.Item style={{ color: "#3f2419" }}>Chaats</ListGroup.Item>
           </a>
         </ListGroup>
       )}

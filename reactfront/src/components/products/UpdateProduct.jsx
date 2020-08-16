@@ -57,12 +57,13 @@ const UpdateProduct = (props) => {
               .updateProduct(id, { name, description, price })
               .then((data) => {
                 console.log(data);
+                //props.history.goBack();
               })
               .catch((err) => {
                 console.log(err);
               });
           }}
-          href="/products"
+          href="/"
         >
           Update
         </Button>

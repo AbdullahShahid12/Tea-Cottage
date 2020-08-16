@@ -11,10 +11,15 @@ const SingleCart = ({ Cart, onDelete }) => {
   };
   return (
     <div>
+      <br />
       <Card style={{ width: "18rem" }}>
-        <ListGroup variant="flush">
-          <ListGroup.Item>
-            {Cart.name}
+        <Card.Img variant="top" src={require("../cup.jpg")} />
+        <Card.Body style={{ color: "#3f2419" }}>
+          <Card.Title>{Cart.name}</Card.Title>
+          <Card.Text>{Cart.description}</Card.Text>
+          <Card.Title>Rs. {Cart.price}</Card.Title>
+
+          <>
             <Button
               variant="contained"
               color="secondary"
@@ -33,8 +38,8 @@ const SingleCart = ({ Cart, onDelete }) => {
             >
               Delete
             </Button>
-          </ListGroup.Item>
-        </ListGroup>
+          </>
+        </Card.Body>
       </Card>
     </div>
   );

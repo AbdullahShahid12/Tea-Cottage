@@ -16,7 +16,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 import userService from "../../services/UserService";
 import ViewProduct from "./ViewProduct";
-import { Card } from "react-bootstrap";
+import { Card, Carousel } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Grid } from "@material-ui/core";
 
@@ -38,11 +38,14 @@ const SingleProduct = ({ Product, onDelete, history }) => {
   };
 
   return (
-    <div>
+    <div style={{ padding: 18 }}>
       <a href={"/products/view/" + Product._id}>
         <Card style={{ width: "18rem" }}>
           <Card.Img variant="top" src={require("../cup.jpg")} />
-          <Card.Body href={"/products/view/" + Product._id}>
+          <Card.Body
+            style={{ color: "#3f2419" }}
+            href={"/products/view/" + Product._id}
+          >
             <Card.Title>{Product.name}</Card.Title>
             <Card.Text>{Product.description}</Card.Text>
             <Card.Title>Rs. {Product.price}</Card.Title>

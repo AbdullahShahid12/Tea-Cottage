@@ -90,7 +90,7 @@ const NewProduct = (props) => {
               .addProduct({ name, price, description, category, subCategory })
               .then((data) => {
                 console.log(data);
-                props.history.push("/products");
+                props.history.goBack();
               })
               .catch((err) => {
                 console.log(err);

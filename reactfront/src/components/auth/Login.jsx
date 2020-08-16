@@ -17,6 +17,7 @@ const Login = (props) => {
   const classes = useStyles();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+
   return (
     <div className={classes.container}>
       <div className={classes.child}>
@@ -47,7 +48,8 @@ const Login = (props) => {
               .login(email, password)
               .then((data) => {
                 console.log(data);
-                window.location.href = "/";
+                //window.location.href = "/";
+                props.history.goBack();
               })
               .catch((err) => {
                 console.log(err);

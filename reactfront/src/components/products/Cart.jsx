@@ -4,13 +4,14 @@ import { Grid } from "@material-ui/core";
 import SingleCart from "./SingleCart";
 const Cart = (props) => {
   const [carts, setCarts] = React.useState([]);
+  const [bill, setBill] = React.useState(0);
   const id = props.match.params.id;
   const getData = () => {
     productService
       .addToCart(-10)
       .then((data) => {
-        console.log(data);
-        setCarts(data);
+        setCarts(data.cart);
+        setBill(data.bill);
       })
       .catch((err) => {
         console.log(err);
@@ -21,6 +22,7 @@ const Cart = (props) => {
 
   return (
     <div>
+      <h2>Shopping Cart</h2>
       {carts.length == 0 ? (
         <p>There are no Products</p>
       ) : (
@@ -30,6 +32,9 @@ const Cart = (props) => {
           ))}
         </Grid>
       )}
+      <br />
+      <br />
+      <h1>Total bill: {bill}</h1>
     </div>
   );
 };
